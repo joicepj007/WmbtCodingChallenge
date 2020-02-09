@@ -17,7 +17,7 @@ MVVM(Model-View-ViewModel) is the architecture pattern used in this project.
 
 It provides Maintainability, testability, extensibility and, in general, a more clean and maintainable codebase.
 
-Advantages of MVP
+Advantages of MVVM
 
 Maintainability:
 
