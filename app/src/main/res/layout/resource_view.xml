@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="response"
+            type="com.example.myapplication.ui.auth.responses.AuthResponse" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/dimen_marigin_start_end"
+        android:layout_marginTop="@dimen/dimen_resource_margintop"
+        android:layout_marginEnd="@dimen/dimen_marigin_start_end"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="right"
+            android:maxLines="1"
+            android:text="@string/str_staked"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:textColor="@color/colorLightBrown"
+            android:textSize="@dimen/dimen_medium_textsize" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/staked_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableEnd="@drawable/eos"
+            android:ellipsize="end"
+            android:gravity="right"
+            android:text="@={response.eosNetWeight}"
+            android:maxLines="1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:textColor="@color/colorBrown"
+            android:textSize="@dimen/dimen_medium_textsize" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@string/str_resources"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:textColor="@color/colorLightBrown"
+            android:textSize="@dimen/dimen_medium_textsize" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_marigin_start_end">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/net_header_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_textview_marginstart"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/str_net"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:textColor="@color/colorDarkBrown"
+                android:textSize="@dimen/dimen_extra_large_textsize" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/net_usd_max_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/dimen_small_margin_start"
+                android:layout_toEndOf="@+id/net_header_text"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@={response.netUsedMax}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:textColor="@color/colorBrown"
+                android:textSize="@dimen/dimen_medium_textsize" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/available_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableEnd="@drawable/eos"
+                android:ellipsize="end"
+                android:gravity="right"
+                android:text="@={response.eosNetWeight}"
+                android:maxLines="1"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:textColor="@color/colorBrown"
+                android:textSize="@dimen/dimen_medium_textsize" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_margin_texview_start">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/progress_value_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@={response.netProgressText}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:textColor="@color/colorBrown"
+                android:textSize="@dimen/dimen_medium_textsize" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_small_margin_start"
+                android:layout_toRightOf="@+id/progress_value_tv"
+                android:indeterminate="false"
+                android:max="100"
+                android:minWidth="@dimen/dimen_progress_min_height"
+                android:minHeight="@dimen/dimen_progressbar_min"
+                android:theme="@style/AppTheme.WhiteAccent" />
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/cpu_header_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/str_cpu"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:textColor="@color/colorDarkBrown"
+                android:textSize="@dimen/dimen_extra_large_textsize" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/cpu_usd_max_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/dimen_small_margin_start"
+                android:layout_toEndOf="@+id/cpu_header_text"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="2,17 ms/134,48 ms"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:textColor="@color/colorBrown"
+                android:textSize="@dimen/dimen_medium_textsize" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/cpu_available_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableEnd="@drawable/eos"
+                android:ellipsize="end"
+                android:gravity="right"
+                android:maxLines="1"
+                android:text="@={response.eosCpuWeight}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:textColor="@color/colorBrown"
+                android:textSize="@dimen/dimen_marigin_start_end" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_margin_texview_start">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/cpu_progress_value_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="2%"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:textColor="@color/colorBrown"
+                android:textSize="@dimen/dimen_medium_textsize" />
+
+            <ProgressBar
+                android:id="@+id/cpu_pb"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_small_margin_start"
+                android:layout_toEndOf="@+id/cpu_progress_value_tv"
+                android:indeterminate="false"
+                android:max="100"
+                android:minWidth="@dimen/dimen_progress_min_height"
+                android:minHeight="@dimen/dimen_progressbar_min"
+                android:progress="1"
+                android:theme="@style/AppTheme.WhiteAccent" />
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/ram_header_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/str_ram"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:textColor="@color/colorDarkBrown"
+                android:textSize="@dimen/dimen_extra_large_textsize" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/ram_usd_max_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/dimen_small_margin_start"
+                android:layout_toRightOf="@+id/ram_header_text"
+                android:ellipsize="end"
+                android:text="@={response.ramUsedMax}"
+                android:maxLines="1"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:textColor="@color/colorBrown"
+                android:textSize="@dimen/dimen_medium_textsize" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_margin_texview_start">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/ram_progress_value_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:ellipsize="end"
+                android:text="@={response.ramProgressText}"
+                android:maxLines="1"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:textColor="@color/colorBrown"
+                android:textSize="@dimen/dimen_medium_textsize" />
+
+            <ProgressBar
+                android:id="@+id/ram_pb"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_small_margin_start"
+                android:layout_toEndOf="@+id/ram_progress_value_tv"
+                android:indeterminate="false"
+                android:max="100"
+                android:minWidth="@dimen/dimen_progress_min_height"
+                android:minHeight="@dimen/dimen_progressbar_min"
+                android:theme="@style/AppTheme.WhiteAccent" />
+        </RelativeLayout>
+    </LinearLayout>
+</layout>

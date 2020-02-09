@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">WombatWallet</string>
+    <string name="str_with_coinbase">with coinbase</string>
+    <string name="str_buy">BUY</string>
+    <string name="str_send">SEND</string>
+    <string name="str_recieve">RECIEVE</string>
+    <string name="str_staked">STAKED</string>
+    <string name="str_resources">RESOURCES</string>
+    <string name="str_net">NET</string>
+    <string name="str_cpu">CPU</string>
+    <string name="str_ram">RAM</string>
+</resources>

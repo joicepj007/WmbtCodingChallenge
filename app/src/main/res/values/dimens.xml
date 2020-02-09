@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="dimen_view_margin_top">100dp</dimen>
+    <dimen name="dimen_textview_marginstart">10dp</dimen>
+    <dimen name="dimen_textview_marginbottom">5dp</dimen>
+    <dimen name="dimen_header_textview_textsize">20sp</dimen>
+    <dimen name="dimen_resource_margintop">10dp</dimen>
+    <dimen name="dimen_marigin_start_end">15dp</dimen>
+    <dimen name="dimen_medium_textsize">15sp</dimen>
+    <dimen name="dimen_large_textsize">18sp</dimen>
+    <dimen name="dimen_extra_large_textsize">20sp</dimen>
+    <dimen name="dimen_margin_texview_start">20dp</dimen>
+    <dimen name="dimen_progressbar_min">50dp</dimen>
+    <dimen name="dimen_progress_min_height">300dp</dimen>
+    <dimen name="dimen_small_margin_start">8dp</dimen>
+    <dimen name="dimen_eos_token_textsize">25sp</dimen>
+</resources>
